@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Abner Miguel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow-y: scroll;
+            font-family: 'Fira Code', monospace;
+            color: #d4d4d4;
+            background-color: #000;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        header h1 {
+            animation: fadeIn 2s;
+        }
+
+        .typing-effect {
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #d4d4d4;
+            animation: typing 3s steps(30, end), blink .6s step-end infinite;
+        }
+
+        .btn {
+            background: #007acc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background: #005f99;
+            transform: scale(1.1);
+        }
+
+        .code-box {
+            background: #252526;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-family: 'Fira Code', monospace;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .code-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+
+    <header class="p-6">
+        <h1 class="text-xl">console.log('<span class="value">Bem-vindo ao meu portfólio!</span>');</h1>
+    </header>
+
+    <main class="max-w-4xl mx-auto py-10">
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Sobre Mim</h2>
+            <div class="code-box">
+                <p class="typing-effect"><span class="key">function</span> <span class="value">sobreMim</span>() {</p>
+                <p class="pl-4">return {</p>
+                <p class="pl-8"><span class="key">nome</span>: <span class="value">'Abner Miguel'</span>,</p>
+                <p class="pl-8"><span class="key">profissao</span>: <span class="value">'Desenvolvedor Front-End'</span>,</p>
+                <p class="pl-8"><span class="key">foco</span>: [<span class="value">'HTML'</span>, <span class="value">'CSS'</span>, <span class="value">'JavaScript'</span>, <span class="value">'React.js'</span>]</p>
+                <p class="pl-4">};</p>
+                <p>} <span class="comment">// Chame-me no console!</span></p>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Projetos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="code-box">
+                    <h3 class="text-lg font-semibold">Projeto 1: Gerenciador de Tarefas</h3>
+                    <p class="text-sm">Uma aplicação poderosa para organizar tarefas diárias, com filtros avançados e integração com APIs.</p>
+                    <a href="ex002.html" class="btn mt-4 inline-block" target="_blank">Ver Projeto</a>
+                </div>
+                <div class="code-box">
+                    <h3 class="text-lg font-semibold">Projeto 2: Portfólio Interativo</h3>
+                    <p class="text-sm">Um site responsivo e dinâmico para exibir projetos de forma criativa usando animações e interatividade.</p>
+                    <a href="ex003.html" class="btn mt-4 inline-block" target="_blank">Ver Projeto</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-6 text-center">
+        <p>&copy; 2025 Desenvolvido por Abner Miguel. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

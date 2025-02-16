@@ -108,10 +108,56 @@
                 </div>
             </div>
         </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Contatos</h2>
+            <div class="flex space-x-4">
+                <a href="https://www.instagram.com/011_abnx/?hl=pt_BR" target="_blank" class="btn">Instagram</a>
+                <a href="https://github.com/abner591" target="_blank" class="btn">GitHub</a>
+            </div>
+        </section>
     </main>
 
     <footer class="p-6 text-center">
         <p>&copy; 2025 Desenvolvido por Abner Miguel. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        const drawMatrix = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0f0';
+            ctx.font = `${fontSize}px monospace`;
+
+            drops.forEach((y, i) => {
+                const text = Math.random() > 0.5 ? '1' : '0';
+                ctx.fillText(text, i * fontSize, y * fontSize);
+
+                if (y * fontSize > canvas.height || Math.random() > 0.95) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            });
+        };
+
+        setInterval(drawMatrix, 50);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
